@@ -1,0 +1,44 @@
+/* Main Layout */
+.main-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Sidebar (users) + Content */
+  gap: 20px;
+  min-height: calc(100vh - 60px); /* header height adjustment */
+  padding: 10px;
+}
+
+/* Users Section */
+.users-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* Content Section */
+.content-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* ✅ Responsive for Tablets */
+@media (max-width: 1024px) {
+  .main-layout {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+/* ✅ Responsive for Mobiles */
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr;   /* Stack vertically */
+  }
+
+  .users-section {
+    order: 1;  /* Show users first */
+  }
+
+  .content-section {
+    order: 2;  /* Then tasks/content */
+  }
+}

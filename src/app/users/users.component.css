@@ -1,0 +1,27 @@
+#users {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* responsive columns */
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none; /* remove bullets */
+}
+
+#users li {
+  width: 100%;
+  display: flex; /* so <app-user> fills the space */
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  #users {
+    grid-template-columns: 1fr 1fr; /* 2 cards per row */
+  }
+}
+
+@media (max-width: 360px) {
+  #users {
+    grid-template-columns: 1fr; /* stack single column */
+  }
+}
+
